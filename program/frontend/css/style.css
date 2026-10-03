@@ -1,0 +1,1279 @@
+/* ==========================================================
+   RESET
+========================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f3f6f9;
+    color: #111827;
+
+    padding-bottom: 90px;
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.top-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+
+    height: 72px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #d9dee5;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 28px;
+
+    box-shadow:
+        0 2px 8px rgba(
+            0,
+            0,
+            0,
+            0.06
+        );
+}
+
+.header-left h1 {
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    color: #111827;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 105px;
+    height: 38px;
+
+    padding: 0 17px;
+
+    border-radius: 20px;
+
+    background: #d1fae5;
+    color: #047857;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    border: 1px solid #a7f3d0;
+}
+
+
+/* ==========================================================
+   MAIN
+========================================================== */
+
+.main-container {
+    width: min(
+        1180px,
+        calc(100% - 40px)
+    );
+
+    margin: 22px auto 0;
+}
+
+
+/* ==========================================================
+   CAMERA
+========================================================== */
+
+.camera-section {
+    width: 100%;
+    margin-bottom: 24px;
+    scroll-margin-top: 90px;
+}
+
+.camera-frame {
+    width: 100%;
+
+    min-height: 480px;
+
+    background: #111111;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 15px rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+#camera-stream {
+    width: 100%;
+    height: auto;
+
+    max-height: 620px;
+
+    object-fit: contain;
+
+    display: block;
+
+    background: #111111;
+}
+
+.camera-error {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    color: #ffffff;
+
+    background: rgba(
+        220,
+        38,
+        38,
+        0.9
+    );
+
+    padding: 14px 22px;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+}
+
+
+/* ==========================================================
+   CARD SECTION
+========================================================== */
+
+.card-section {
+    background: #ffffff;
+
+    border: 1px solid #dce2e8;
+
+    border-radius: 14px;
+
+    margin-bottom: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 3px 12px rgba(
+            0,
+            0,
+            0,
+            0.06
+        );
+
+    scroll-margin-top: 90px;
+}
+
+.section-header {
+    padding: 23px 22px 20px;
+
+    border-bottom: 1px solid #dce2e8;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ffffff,
+            #fafcfe
+        );
+}
+
+.section-header h2 {
+    font-size: 20px;
+
+    font-weight: 800;
+
+    color: #111827;
+
+    margin-bottom: 8px;
+}
+
+.section-header p {
+    font-size: 14px;
+
+    color: #53657a;
+
+    line-height: 1.5;
+}
+
+
+/* ==========================================================
+   TABLE WRAPPER
+========================================================== */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: auto;
+
+    background: #ffffff;
+}
+
+
+/* ==========================================================
+   TABLE HEADER
+========================================================== */
+
+thead th {
+    background: #edf1f5;
+
+    color: #111827;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    text-align: center;
+
+    padding: 13px 10px;
+
+    border-right: 1px solid #d5dce3;
+
+    border-bottom: 1px solid #cfd6dd;
+
+    white-space: nowrap;
+}
+
+thead th:last-child {
+    border-right: none;
+}
+
+
+/* ==========================================================
+   TABLE BODY
+========================================================== */
+
+tbody td {
+    padding: 12px 10px;
+
+    border-right: 1px solid #dce2e8;
+
+    border-bottom: 1px solid #dce2e8;
+
+    text-align: center;
+
+    vertical-align: middle;
+
+    font-size: 13px;
+
+    color: #111827;
+
+    white-space: nowrap;
+}
+
+tbody td:last-child {
+    border-right: none;
+}
+
+tbody tr {
+    transition:
+        background 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+/* ==========================================================
+   REKAP ROW CLICK
+========================================================== */
+
+#rekap-table tbody tr {
+    cursor: pointer;
+}
+
+#rekap-table tbody tr:hover {
+    background: #eef8ff;
+
+    box-shadow:
+        inset 4px 0 0 #16a34a;
+}
+
+#rekap-table tbody tr:active {
+    background: #dff1ff;
+}
+
+
+/* ==========================================================
+   TANGGAL REKAP
+========================================================== */
+
+#rekap-table tbody td:first-child {
+    font-weight: 800;
+
+    color: #075985;
+}
+
+#rekap-table tbody td:first-child button {
+    border: none;
+
+    background: transparent;
+
+    color: #075985;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    padding: 4px 8px;
+}
+
+
+/* ==========================================================
+   FOTO
+========================================================== */
+
+.foto-hasil {
+    width: 155px;
+    height: 100px;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+
+    border: 1px solid #cbd5e1;
+
+    background: #e5e7eb;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.foto-hasil:hover {
+    transform: scale(1.04);
+
+    box-shadow:
+        0 5px 14px rgba(
+            0,
+            0,
+            0,
+            0.20
+        );
+}
+
+
+/* ==========================================================
+   STATUS OK / NG
+========================================================== */
+
+.status-ok {
+    color: #00843d !important;
+
+    font-weight: 800;
+}
+
+.status-ng {
+    color: #dc2626 !important;
+
+    font-weight: 800;
+}
+
+
+/* ==========================================================
+   HASIL
+========================================================== */
+
+.hasil-good {
+    color: #00843d !important;
+
+    font-weight: 900;
+}
+
+.hasil-ng {
+    color: #dc2626 !important;
+
+    font-weight: 900;
+}
+
+
+/* ==========================================================
+   BUTTON UMUM
+========================================================== */
+
+button {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    cursor: pointer;
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(
+        37,
+        99,
+        235,
+        0.30
+    );
+
+    outline-offset: 2px;
+}
+
+
+/* ==========================================================
+   BUTTON EDIT
+========================================================== */
+
+.btn-edit,
+.edit-button,
+button[onclick*="bukaEdit"] {
+    background: #facc15 !important;
+
+    color: #111827 !important;
+
+    border: 1px solid #eab308 !important;
+
+    border-radius: 6px;
+
+    padding: 8px 13px;
+
+    font-weight: 800;
+
+    font-size: 12px;
+
+    margin-right: 5px;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+.btn-edit:hover,
+.edit-button:hover,
+button[onclick*="bukaEdit"]:hover {
+    background: #eab308 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   BUTTON HAPUS
+========================================================== */
+
+.btn-delete,
+.delete-button,
+button[onclick*="hapusData"],
+button[onclick*="hapusHari"] {
+    background: #dc2626 !important;
+
+    color: #ffffff !important;
+
+    border: 1px solid #b91c1c !important;
+
+    border-radius: 6px;
+
+    padding: 8px 13px;
+
+    font-weight: 800;
+
+    font-size: 12px;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+.btn-delete:hover,
+.delete-button:hover,
+button[onclick*="hapusData"]:hover,
+button[onclick*="hapusHari"]:hover {
+    background: #b91c1c !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   FOTO POPUP
+========================================================== */
+
+.foto-popup {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    display: none;
+}
+
+
+/* POPUP AKTIF */
+
+.foto-popup.aktif {
+    display: flex;
+}
+
+
+/* BACKGROUND POPUP */
+
+.foto-popup-overlay {
+    width: 100%;
+    height: 100%;
+
+    background: rgba(
+        0,
+        0,
+        0,
+        0.78
+    );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+
+/* KOTAK FOTO */
+
+.foto-popup-content {
+    position: relative;
+
+    max-width: 95vw;
+    max-height: 92vh;
+
+    background: #111111;
+
+    border-radius: 12px;
+
+    padding: 10px;
+
+    box-shadow:
+        0 15px 50px rgba(
+            0,
+            0,
+            0,
+            0.45
+        );
+}
+
+
+/* FOTO BESAR */
+
+.foto-popup-content img {
+    max-width: 90vw;
+
+    max-height: 85vh;
+
+    width: auto;
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    border-radius: 7px;
+}
+
+
+/* TOMBOL CLOSE */
+
+.foto-popup-close {
+    position: absolute;
+
+    right: -14px;
+    top: -14px;
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #dc2626;
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    z-index: 5;
+
+    cursor: pointer;
+}
+
+.foto-popup-close:hover {
+    background: #b91c1c;
+}
+
+
+/* ==========================================================
+   MODAL UMUM
+========================================================== */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1900;
+
+    background: rgba(
+        15,
+        23,
+        42,
+        0.65
+    );
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.modal-box {
+    width: min(
+        600px,
+        95vw
+    );
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 20px 60px rgba(
+            0,
+            0,
+            0,
+            0.30
+        );
+}
+
+.modal-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 20px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h3 {
+    font-size: 18px;
+
+    font-weight: 800;
+}
+
+.modal-close {
+    width: 34px;
+    height: 34px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #f1f5f9;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+.modal-close:hover {
+    background: #e2e8f0;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #374151;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    height: 40px;
+
+    padding: 0 11px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    background: #ffffff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(
+            37,
+            99,
+            235,
+            0.10
+        );
+}
+
+.form-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+}
+
+.modal-footer {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 16px 20px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+.btn-cancel {
+    background: #64748b;
+
+    color: #ffffff;
+
+    border: none;
+
+    border-radius: 7px;
+
+    padding: 10px 17px;
+
+    font-weight: 800;
+}
+
+.btn-cancel:hover {
+    background: #475569;
+}
+
+.btn-save-edit {
+    background: #2563eb;
+
+    color: #ffffff;
+
+    border: none;
+
+    border-radius: 7px;
+
+    padding: 10px 17px;
+
+    font-weight: 800;
+}
+
+.btn-save-edit:hover {
+    background: #1d4ed8;
+}
+
+
+/* ==========================================================
+   SHUTDOWN POPUP
+========================================================== */
+
+.shutdown-box {
+    width: min(
+        440px,
+        94vw
+    );
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(
+            0,
+            0,
+            0,
+            0.30
+        );
+}
+
+.shutdown-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #fee2e2;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+.shutdown-box h3 {
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+.shutdown-box p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-bottom: 24px;
+}
+
+.shutdown-actions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.shutdown-actions button {
+    width: 100%;
+
+    min-height: 44px;
+
+    border-radius: 7px;
+
+    font-weight: 800;
+
+    border: none;
+}
+
+.btn-shutdown {
+    background: #dc2626;
+
+    color: #ffffff;
+}
+
+.btn-shutdown:hover {
+    background: #b91c1c;
+}
+
+.btn-restart {
+    background: #f59e0b;
+
+    color: #111827;
+}
+
+.btn-restart:hover {
+    background: #d97706;
+}
+
+
+/* ==========================================================
+   BOTTOM TOOLBAR
+========================================================== */
+
+.bottom-toolbar {
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 1000;
+
+    min-height: 76px;
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.97
+    );
+
+    border-top: 1px solid #d8dee6;
+
+    box-shadow:
+        0 -4px 15px rgba(
+            0,
+            0,
+            0,
+            0.10
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 10px 15px;
+}
+
+.toolbar-button {
+    min-width: 145px;
+
+    height: 46px;
+
+    border-radius: 8px;
+
+    border: 1px solid transparent;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    transition:
+        transform 0.15s ease,
+        filter 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.toolbar-button:hover {
+    transform: translateY(-1px);
+
+    filter: brightness(0.96);
+
+    box-shadow:
+        0 4px 10px rgba(
+            0,
+            0,
+            0,
+            0.12
+        );
+}
+
+.toolbar-button span {
+    font-size: 16px;
+}
+
+
+/* ==========================================================
+   CAMERA LIVE - HIJAU
+========================================================== */
+
+.camera-button {
+    background: #16a34a;
+
+    color: #ffffff;
+
+    border-color: #15803d;
+}
+
+
+/* ==========================================================
+   SEMUA DATA - HIJAU
+========================================================== */
+
+.all-data-button {
+    background: #16a34a;
+
+    color: #ffffff;
+
+    border-color: #15803d;
+}
+
+
+/* ==========================================================
+   SIMPAN - HIJAU
+========================================================== */
+
+.save-button {
+    background: #16a34a;
+
+    color: #ffffff;
+
+    border-color: #15803d;
+}
+
+
+/* ==========================================================
+   SHUTDOWN - MERAH
+========================================================== */
+
+.shutdown-button {
+    background: #dc2626;
+
+    color: #ffffff;
+
+    border-color: #b91c1c;
+}
+
+
+/* ==========================================================
+   BOTTOM SPACE
+========================================================== */
+
+.bottom-space {
+    height: 20px;
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width: 900px) {
+
+    .main-container {
+        width: calc(
+            100% - 24px
+        );
+    }
+
+    .top-header {
+        padding: 0 16px;
+
+        height: 64px;
+    }
+
+    .header-left h1 {
+        font-size: 18px;
+    }
+
+    .status-badge {
+        min-width: auto;
+
+        padding: 0 12px;
+
+        font-size: 11px;
+
+        height: 34px;
+    }
+
+    .camera-frame {
+        min-height: 300px;
+    }
+
+    .toolbar-button {
+        min-width: 125px;
+
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    body {
+        padding-bottom: 145px;
+    }
+
+    .bottom-toolbar {
+        flex-wrap: wrap;
+
+        min-height: 130px;
+
+        gap: 7px;
+
+        padding: 8px;
+    }
+
+    .toolbar-button {
+        min-width:
+            calc(
+                50% - 5px
+            );
+
+        height: 43px;
+    }
+
+    .section-header {
+        padding: 18px 15px;
+    }
+
+    .section-header h2 {
+        font-size: 18px;
+    }
+
+    .foto-hasil {
+        width: 120px;
+
+        height: 78px;
+    }
+
+    .form-row {
+        grid-template-columns:
+            1fr;
+    }
+
+    .foto-popup-overlay {
+        padding: 15px;
+    }
+
+    .foto-popup-content {
+        max-width: 96vw;
+        max-height: 90vh;
+    }
+
+    .foto-popup-content img {
+        max-width: 92vw;
+        max-height: 82vh;
+    }
+}
+
+
+/* ==========================================================
+   TABLE SCROLLBAR
+========================================================== */
+
+.table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #edf1f5;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #b8c2cc;
+
+    border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+
+/* ==========================================================
+   EMPTY TABLE
+========================================================== */
+
+tbody td[colspan] {
+    color: #64748b;
+
+    padding: 25px;
+
+    font-style: italic;
+}
+
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print {
+
+    .top-header {
+        position: static;
+    }
+
+    .bottom-toolbar {
+        display: none;
+    }
+
+    body {
+        padding-bottom: 0;
+
+        background: #ffffff;
+    }
+
+    .card-section {
+        box-shadow: none;
+
+        border: 1px solid #999;
+    }
+
+    .foto-popup {
+        display: none !important;
+    }
+}
